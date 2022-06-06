@@ -16,6 +16,8 @@
         --light-shadow: #264059;
         --dark-shadow: #0f1924;
         --font-color: white;
+        --background-color: var(--cg40);
+        --depth-1-color: var(--cg20);
 
         --direction-x: -4px;
         --direction-y: -4px;
@@ -38,6 +40,21 @@
         font-weight: 400;
         line-height: 24px;
         letter-spacing: 0px;
+    }
+    .cg-20{
+        background-color: var(--cg20);
+    }
+    .cg-40{
+        background-color: var(--cg40);
+    }
+    .align-items-center{
+        align-items: center;
+    }
+    .justify-content-center{
+        justify-content: center;
+    }
+    .padding-24{
+        padding:24px;
     }
 }
 @layer layout {
@@ -67,6 +84,32 @@
 
     main {
         margin-top: 188px;
+        display: flex;
+        flex-direction: row;
+
+    }
+    aside{
+        container: inline-size;
+        container-name: sidebar;
+        max-width: 304px;
+        width: 100%;
+        transition: .2s;
+    }
+    #page{
+        container: inline-size;
+        container-name: page;
+        min-width: 340px;
+        max-width: 864px;
+        width: 100%;
+    }
+    @container sidebar (max-width: 360px){
+        /* sidebar 크기에 따른 미디어쿼리 */
+    }
+    @container page (max-width: 360px){
+        /* page 크기에 따른 미디어 쿼리 */
+        aside{
+            width: 0;
+        }
     }
 }
 @layer header-style {
@@ -94,7 +137,6 @@
         top: 2px;
         bottom: 2px;
         border-radius: 16px;
-        background-color: var(--cg40);
     }
 
     header .content {
@@ -103,13 +145,14 @@
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 24px;
         display: flex;
+        align-items: center;
     }
 
     header .dynamic-size {
         padding: 24px;
         visibility: hidden;
+        display:flex;
     }
 }
 @layer logo-style {
@@ -121,6 +164,7 @@
     .search-box {
         position: relative;
         width: 308px;
+        height:24px;
         padding: 12px;
         box-shadow: inset -4px -4px 8px #FFFFFF, inset 4px 4px 8px #B8C2CC;
         border-radius: 8px;
@@ -152,8 +196,8 @@
         background: transparent;
     }
 }
-@layer round-button {
-    .round-button {
+@layer round-button-style {
+    .button {
         display: flex;
         margin-left: 24px;
         border: 0;
@@ -161,5 +205,16 @@
         align-items: center;
         width: 60px;
         height: 60px;
+        background: var(--depth-1-color);
+        box-shadow: -4px -4px 6px #FFFFFF, 4px 4px 6px #D2D4D5;
+        position:relative;
+    }
+    .round, .round *{
+        border-radius: 100%;
+    }
+}
+@layer aside-style{
+    .drop-down li{
+        list-style-type : none;
     }
 }
