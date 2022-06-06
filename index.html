@@ -8,8 +8,11 @@
 <body>
 
 <script>
-    let color = new Color.default("lab", [7, -24, 29]);
+    let color = new Color.default("lch", [20, 80, 30]);
     console.log(color.hex);
+    let color2 = new Color.default(color.hex);
+    let color3 = new Color.default("lch", [color2.lch[0], color2.lch[1], color2.lch[2]]);
+    // console.log(color3);
 </script>
 </body>
 </html>

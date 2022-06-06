@@ -1,0 +1,85 @@
+@layer button {
+    button {
+        line-height: 1;
+        text-align: center;
+        -moz-user-select: -moz-none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
+        border-radius: 12px;
+        position: relative;
+        height: 32px;
+        margin-top: 12px;
+        cursor:pointer;
+    }
+
+    button:disabled,
+    button:disabled div,
+    button:disabled .hover,
+    button:disabled .active {
+        /*background: var(--CG100);*/
+        /*color: var(--CG200);*/
+    }
+
+    button div {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 12px;
+        position: absolute;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
+        text-align: center;
+    }
+
+    button div span {
+    }
+
+    .style {
+        background: linear-gradient(105deg, var(--light-shadow) 0%, var(--keycolor) 100%) padding-box, linear-gradient(105deg, var(--light-shadow), var(--dark-shadow)) border-box;
+        opacity: 1;
+        border: 2px solid transparent;
+    }
+
+    .hover, .active {
+        opacity: 0;
+        top: -2px;
+        left: -2px;
+        width: 100%;
+        height: 100%;
+        border: 2px solid transparent;
+    }
+
+    .hover {
+        background: linear-gradient(105deg, var(--keycolor) 0%, var(--keycolor) 100%) padding-box, linear-gradient(105deg, var(--light-shadow), var(--dark-shadow)) border-box;
+        transition: ease .4s;
+    }
+
+    .active {
+        background: linear-gradient(105deg, var(--light-shadow) 0%, var(--dark-shadow) 100%) padding-box, linear-gradient(105deg, var(--light-shadow), var(--dark-shadow)) border-box;
+        box-shadow: inset -4px -4px 8px 0px var(--light-shadow), inset 4px 4px 8px 0px var(--dark-shadow);
+        transition: ease .2s;
+    }
+
+    .style:hover > .hover {
+        opacity: 1;
+    }
+
+    .style:active > .hover {
+        opacity: 0;
+        transition: ease .2s !important;
+    }
+
+    .style:active > .active {
+        opacity: 1;
+    }
+
+    button span {
+        color: white;
+        font-weight: bold;
+    }
+}

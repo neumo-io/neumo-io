@@ -1,0 +1,297 @@
+:root {
+    --cg00: #FFFFFF;
+    --cg900: #12161A;
+    --cg800: #292E33;
+    --cg700: #3D454D;
+    --cg600: #525C66;
+    --cg500: #6C7680;
+    --cg300: #98A5B3;
+    --cg100: #DAE0E6;
+    --cg60: #E4EAF0;
+    --cg40: #EDF1F5;
+    --cg20: #F7F9FA;
+
+    --keycolor: #1f3347;
+    --light-shadow: #264059;
+    --dark-shadow: #0f1924;
+    --font-color: white;
+
+    --direction-x: -4px;
+    --direction-y: -4px;
+    --direction-x-invert: 4px;
+    --direction-y-invert: 4px;
+    --text-direction-x: -2px;
+    --text-direction-y: -2px;
+    --text-direction-x-invert: 2px;
+    --text-direction-y-invert: 2px;
+}
+
+html,
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--keycolor);
+    color: var(--font-color);
+}
+
+.box-shadow {
+    box-shadow: var(--direction-x) var(--direction-y) 6px var(--light-shadow), var(--direction-x-invert) var(--direction-y-invert) 6px var(--dark-shadow);
+}
+
+.inset-shadow {
+    box-shadow: inset var(--direction-x) var(--direction-y) 6px var(--light-shadow), inset var(--direction-x-invert) var(--direction-y-invert) 6px var(--dark-shadow);
+}
+
+.container {
+    width: 1224px;
+    margin: auto;
+    padding: 48px 24px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tune-card {
+    width: 416px;
+    padding: 40px;
+    border-radius: 16px;
+}
+
+.simulate-card {
+    width: 600px;
+    position: relative;
+}
+
+.simulate-card > .flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.target-box {
+    width: 184px;
+    height: 184px;
+    background-color: var(--keycolor);
+    border-radius: 15px;
+}
+
+@layer range {
+    @layer preset {
+        input[type=range] {
+            width: 100%;
+            -webkit-appearance: none;
+            background: transparent;
+        }
+    }
+
+    input[type=range] {
+        background: var(--keycolor);
+        box-shadow: inset -4px -4px 6px var(--light-shadow), inset 4px 4px 6px var(--dark-shadow);
+        border-radius: 8px;
+        height: 8px;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: linear-gradient(135deg, var(--light-shadow) 0%, var(--keycolor) 100%);
+        box-shadow: 4px 4px 6px var(--dark-shadow);
+        box-sizing: border-box;
+        border-radius: 100%;
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+    }
+
+
+}
+
+@layer lighting {
+    .lighting-blur.active {
+        width: 160px;
+        height: 160px;
+        position: absolute;
+        background-color: white;
+        filter: blur(48px);
+        opacity: 0.4;
+    }
+
+    .lighting-w {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+    }
+
+    @layer disabled {
+        .lighting {
+            z-index: 1;
+        }
+    }
+
+    @layer left-top {
+
+        .lighting-w.left-top,
+        .lighting-w.left-top > .lighting-blur,
+        .lighting-w.left-top > .lighting {
+            top: 0;
+            left: 0;
+            border-radius: 0 0 100% 0;
+        }
+    }
+
+    .lighting-w.right-top,
+    .lighting-w.right-top > .lighting-blur,
+    .lighting-w.right-top > .lighting {
+        top: 0;
+        right: 0;
+        border-radius: 0 0 0 100%;
+    }
+
+    .lighting-w.left-bottom,
+    .lighting-w.left-bottom > .lighting-blur,
+    .lighting-w.left-bottom > .lighting {
+        bottom: 0;
+        left: 0;
+        border-radius: 0 100% 0 0;
+    }
+
+    .lighting-w.right-bottom,
+    .lighting-w.right-bottom > .lighting-blur,
+    .lighting-w.right-bottom > .lighting {
+        bottom: 0;
+        right: 0;
+        border-radius: 100% 0 0 0;
+    }
+
+    .lighting {
+        width: 100%;
+        height: 100%;
+        background-color: var(--keycolor);
+    }
+
+    .lighting-w.left-bottom > .lighting-blur {
+        bottom: 0;
+        left: 0;
+    }
+
+    .lighting-w.left-bottom > .lighting-blur {
+        bottom: 0;
+        left: 0;
+    }
+
+    .lighting-w.left-bottom > .lighting-blur {
+        bottom: 0;
+        left: 0;
+    }
+
+    .lighting-w.left-bottom > .lighting-blur {
+        bottom: 0;
+        left: 0;
+    }
+}
+span, output {
+    transition: .25s ease color;
+}
+
+h1 {
+    font-size: 104px;
+    line-height: 100%;
+}
+
+footer > a {
+    display: flex;
+    border-radius: 16px;
+    height: 80px;
+    width: 80px;
+    background-color: var(--keycolor);
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--direction-x) var(--direction-y) 6px var(--light-shadow), var(--direction-x-invert) var(--direction-y-invert) 6px var(--dark-shadow);
+}
+
+footer > a:active {
+    display: flex;
+    border-radius: 16px;
+    height: 80px;
+    width: 80px;
+    background-color: var(--keycolor);
+    align-items: center;
+    justify-content: center;
+    box-shadow: -4px -4px 6px transparent, 4px 4px 6px transparent;
+    box-shadow: inset -4px -4px 6px var(--light-shadow), inset 4px 4px 6px var(--dark-shadow);
+}
+
+footer {
+    padding: 40px;
+    min-width: 1224px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tune-card form {
+    display: flex;
+    line-height: 24px;
+    font-size: 16px;
+    align-items: center;
+}
+
+form span {
+    width: 120px;
+    opacity: .8;
+}
+
+form output {
+    width: 40px;
+    font-weight: 700;
+    opacity: .8;
+}
+
+.title {
+    position: relative;
+    height: 208px;
+}
+
+
+.title {
+    color: var(--keycolor);
+    text-shadow: var(--text-direction-x-invert) var(--text-direction-y-invert) 2px var(--light-shadow), var(--text-direction-x) var(--text-direction-y) 2px var(--dark-shadow);
+}
+
+svg {
+    filter: drop-shadow(3px 3px 4px var(--dark-shadow));
+    transition: .5s ease;
+}
+
+.lighting {
+    cursor: pointer;
+}
+
+.color {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+    flex-shrink: 0;
+}q
+#history{
+    display:flex;
+    width:100%;
+    overflow-x:auto;
+    gap:16px;
+    padding-bottom:16px;
+}
+#history::-webkit-scrollbar {
+    height:1px;
+    margin-right:0px;
+}
+
+#history::-webkit-scrollbar-thumb {
+    background-color: var(--purple-default);
+}
+
+#history::-webkit-scrollbar-track {
+    background-color: var(--cg100);
+}
