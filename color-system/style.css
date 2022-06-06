@@ -298,7 +298,7 @@ svg {
     background-color: var(--cg100);
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 865px){
     .tune-card{
         width: calc(100% - 60px);
         padding: 20px;

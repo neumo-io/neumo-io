@@ -12,7 +12,7 @@
         --cg40: #EDF1F5;
         --cg20: #F7F9FA;
 
-        --keycolor: #1f3347;
+        --keycolor: #0060E5;
         --light-shadow: #264059;
         --dark-shadow: #0f1924;
         --font-color: white;
@@ -83,30 +83,26 @@
     }
 
     main {
+        container: inline-size;
+        container-name: content;
         margin-top: 188px;
         display: flex;
         flex-direction: row;
-
     }
     aside{
-        container: inline-size;
-        container-name: sidebar;
+
         max-width: 304px;
         width: 100%;
         transition: .2s;
     }
     #page{
-        container: inline-size;
-        container-name: page;
-        min-width: 340px;
         max-width: 864px;
+        min-width: 340px;
+        margin-left: auto;
         width: 100%;
     }
-    @container sidebar (max-width: 360px){
-        /* sidebar 크기에 따른 미디어쿼리 */
-    }
-    @container page (max-width: 360px){
-        /* page 크기에 따른 미디어 쿼리 */
+    @container content (max-width: 1312px){
+        /* content 크기에 따른 미디어쿼리 */
         aside{
             width: 0;
         }
@@ -214,7 +210,110 @@
     }
 }
 @layer aside-style{
-    .drop-down li{
-        list-style-type : none;
+    @layer default {
+        .drop-down li {
+            list-style-type: none;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-left: 16px;
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+            cursor:pointer;
+            transition: .2s;
+        }
+
+        .drop-down li:first-child {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .drop-down li:first-child svg {
+            margin-left: auto;
+            transition: .2s;
+        }
+
+        .drop-down li:not(:first-child) {
+            margin-top:8px;
+            height: 0;
+            padding: 0;
+            overflow: hidden;
+            font-size: 14px;
+        }
+        .drop-down li:last-child{
+            margin-bottom: 8px;
+        }
+    }
+    @layer hover{
+        .drop-down li:first-child:hover{
+            background-color: var(--cg20);
+        }
+        .drop-down li:not(:first-child):hover {
+            background-color: var(--cg20);
+            color: var(--keycolor);
+        }
+
+        .drop-down:hover li:first-child strong {
+            color: var(--keycolor);
+        }
+
+        .drop-down:hover li:first-child svg {
+        }
+
+        .drop-down:hover li:first-child svg path {
+            fill: var(--keycolor);
+        }
+    }
+    @layer active {
+        .drop-down.active li:not(:first-child) {
+            height: auto;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-left: 16px;
+        }
+        .drop-down.active li:first-child{
+            background-color: var(--cg20);
+            box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.5), 2px 2px 4px #DAE0E6;
+        }
+        .drop-down.active li:first-child strong {
+            color: var(--keycolor);
+        }
+
+        .drop-down.active li:first-child svg {
+            transform-origin: center;
+            transform: rotate(180deg);
+        }
+
+        .drop-down.active li:first-child svg path {
+            fill: var(--keycolor);
+        }
+    }
+
+}
+@layer card-style{
+    .card{
+        box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.5), 2px 2px 4px #DAE0E6;
+        border-radius: 8px;
+        max-width: 304px;
+        margin-bottom:8px;
+        padding:16px;
+    }
+    .card p{
+        margin:0;
+        margin-bottom:12px;
+        color: var(--cg500);
+        font-size: 12px;
+    }
+}
+
+@layer iframe-style{
+    iframe{
+        width:100%;
+        border-radius: 8px;
     }
 }
