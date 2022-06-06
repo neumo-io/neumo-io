@@ -18,7 +18,7 @@
     button:disabled .hover,
     button:disabled .active {
         /*background: var(--CG100);*/
-        /*color: var(--CG200);*/
+        /*color-system: var(--CG200);*/
     }
 
     button div {

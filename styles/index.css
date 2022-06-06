@@ -1,0 +1,165 @@
+@layer init {
+    :root {
+        --cg00: #FFFFFF;
+        --cg900: #12161A;
+        --cg800: #292E33;
+        --cg700: #3D454D;
+        --cg600: #525C66;
+        --cg500: #6C7680;
+        --cg300: #98A5B3;
+        --cg100: #DAE0E6;
+        --cg60: #E4EAF0;
+        --cg40: #EDF1F5;
+        --cg20: #F7F9FA;
+
+        --keycolor: #1f3347;
+        --light-shadow: #264059;
+        --dark-shadow: #0f1924;
+        --font-color: white;
+
+        --direction-x: -4px;
+        --direction-y: -4px;
+        --direction-x-invert: 4px;
+        --direction-y-invert: 4px;
+        --text-direction-x: -2px;
+        --text-direction-y: -2px;
+        --text-direction-x-invert: 2px;
+        --text-direction-y-invert: 2px;
+        --app-padding: 24px;
+    }
+
+    body, html, #app {
+        background-color: var(--cg40);
+    }
+
+    * {
+        font-family: Spoqa Han Sans Neo;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0px;
+    }
+}
+@layer layout {
+    body, html {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        align-items: center;
+        margin: 0;
+    }
+
+    #app {
+        max-width: 1360px;
+        width: calc(calc(100% - var(--app-padding)) - var(--app-padding));
+        padding-left: var(--app-padding);
+        padding-right: var(--app-padding);
+        position: relative;
+    }
+
+    header {
+        position: absolute;
+        top: 40px;
+        left: var(--app-padding);
+        right: var(--app-padding);
+    }
+
+    main {
+        margin-top: 188px;
+    }
+}
+@layer header-style {
+
+    header .container {
+        position: relative;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.06);
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    header .border {
+        position: absolute;
+        background: linear-gradient(180deg, #FFFFFF 0%, #E1E6EC 100%);
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    header .solid {
+        position: absolute;
+        left: 2px;
+        right: 2px;
+        top: 2px;
+        bottom: 2px;
+        border-radius: 16px;
+        background-color: var(--cg40);
+    }
+
+    header .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 24px;
+        display: flex;
+    }
+
+    header .dynamic-size {
+        padding: 24px;
+        visibility: hidden;
+    }
+}
+@layer logo-style {
+    .logo {
+        height: 40px;
+    }
+}
+@layer search-box-style {
+    .search-box {
+        position: relative;
+        width: 308px;
+        padding: 12px;
+        box-shadow: inset -4px -4px 8px #FFFFFF, inset 4px 4px 8px #B8C2CC;
+        border-radius: 8px;
+        align-items: center;
+        display: flex;
+        grid-gap: 12px;
+        margin-left: auto;
+        color: var(--cg300);
+    }
+
+    .search-input {
+        background: var(--cg40);
+        border: 0;
+        font-size: 18px;
+        position: absolute;
+        top: 12px;
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+        transition: .2s;
+    }
+
+    .search-input:focus {
+        border: 0;
+        outline: none;
+    }
+
+    .search-input:invalid {
+        background: transparent;
+    }
+}
+@layer round-button {
+    .round-button {
+        display: flex;
+        margin-left: 24px;
+        border: 0;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+    }
+}

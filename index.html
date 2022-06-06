@@ -4,15 +4,61 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://colorjs.io/dist/color.js"></script>
+    <style>
+        @import 'styles/index.css';
+    </style>
 </head>
 <body>
+<div id="app">
+    <header>
+        <div class="container">
+            <div class="border"></div>
+            <div class="solid">
+            </div>
+            <div class="dynamic-size">
+                <img class="logo" src="assets/logo.svg"/>
+            </div>
+            <div class="content">
+                <img class="logo" src="assets/logo.svg"/>
+                <div class="search-box">
+                    <img src="assets/search.svg"/>
+                    <span>Search Neumo</span>
+                    <input class="search-input" required/>
+                </div>
+                <button class="round-button">
+                    <img src="assets/category.svg"/>
+                </button>
+            </div>
+        </div>
+    </header>
 
+    <main>
+        <nav>
+            <section>
+                <div>
+                    <span>Overview</span>
+                    <li>Intro</li>
+                    <li>Color System</li>
+                    <li>Directions</li>
+                </div>
+                <div>
+                    <span>Components</span>
+                    <li>Buttons</li>
+                    <li>Card</li>
+                    <li>Dropdown</li>
+                </div>
+            </section>
+            <section>
+
+            </section>
+        </nav>
+        <section>
+
+        </section>
+    </main>
+</div>
 <script>
-    let color = new Color.default("lch", [20, 80, 30]);
-    console.log(color.hex);
-    let color2 = new Color.default(color.hex);
-    let color3 = new Color.default("lch", [color2.lch[0], color2.lch[1], color2.lch[2]]);
-    // console.log(color3);
+
 </script>
 </body>
 </html>

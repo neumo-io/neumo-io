@@ -275,17 +275,19 @@ svg {
     border-radius: 100%;
     cursor: pointer;
     flex-shrink: 0;
-}q
-#history{
-    display:flex;
-    width:100%;
-    overflow-x:auto;
-    gap:16px;
-    padding-bottom:16px;
 }
+
+#history {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 16px;
+}
+
 #history::-webkit-scrollbar {
-    height:1px;
-    margin-right:0px;
+    height: 1px;
+    margin-right: 0px;
 }
 
 #history::-webkit-scrollbar-thumb {
@@ -294,4 +296,33 @@ svg {
 
 #history::-webkit-scrollbar-track {
     background-color: var(--cg100);
+}
+
+@media only screen and (max-width: 500px){
+    .tune-card{
+        width: calc(100% - 60px);
+        padding: 20px;
+        margin-bottom: 24px;
+    }
+    .container{
+        width: calc(100% - 40px);
+        flex-direction: column;
+    }
+    .simulate-card{
+        width: calc(100% - 20px);
+    }
+    .title{
+        width:calc(100% - 20px);
+        font-size:32px;
+        height:auto;
+    }
+    html{
+        width:100vw;
+        overflow-x: hidden;
+    }
+    .target-box{
+        width: 100px;
+        height:100px;
+        margin:50px;
+    }
 }

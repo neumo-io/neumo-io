@@ -1,20 +1,20 @@
 let keyColor = {
-    hue: Number,
-    chroma: Number,
-    light: Number,
-    opacity: Number,
+    hue: 210,
+    chroma: 35,
+    light: 20,
+    opacity: 1,
 }
 let lightShadow = {
-    hue: Number,
-    chroma: Number,
-    light: Number,
-    opacity: Number,
+    hue: 210,
+    chroma: 35,
+    light: 20,
+    opacity: 1,
 }
 let darkShadow = {
-    hue: Number,
-    chroma: Number,
-    light: Number,
-    opacity: Number,
+    hue: 210,
+    chroma: 35,
+    light: 20,
+    opacity: 1,
 }
 let intensity = {
     light: 10,
@@ -36,9 +36,9 @@ const isDark = () => {
     return keyColor.light < 50;
 }
 const setShadows = () => {
-    getColor(keyColor, '--keycolor');
-    getColor(lightShadow, '--keycolor');
-    getColor(darkShadow, '--keycolor');
+    // getColor(keyColor, '--keycolor');
+    // getColor(lightShadow, '--keycolor');
+    // getColor(darkShadow, '--keycolor');
     // if (isLight()) {
     //     lightShadow.light = keyColor.light + intensity.light;
     //     darkShadow.light = keyColor.light - intensity.dark;
@@ -51,6 +51,12 @@ const setShadows = () => {
     //         darkShadow.light = keyColor.light - 10;
     //     }
     // }
+    lightShadow.hue = keyColor.hue;
+    darkShadow.hue = keyColor.hue;
+
+    lightShadow.chroma = keyColor.chroma;
+    darkShadow.chroma = keyColor.chroma;
+
     lightShadow.light = keyColor.light + intensity.light;
     darkShadow.light = keyColor.light - intensity.dark;
 
@@ -60,9 +66,9 @@ const setShadows = () => {
 }
 const setFontColor = () => {
     if (isLight()) {
-        document.documentElement.style.setProperty('--font-color', `black`);
+        document.documentElement.style.setProperty('--font-color-system', `black`);
     } else {
-        document.documentElement.style.setProperty('--font-color', `white`);
+        document.documentElement.style.setProperty('--font-color-system', `white`);
 
     }
 }
@@ -95,7 +101,7 @@ const setKeyColor = () => {
     document.documentElement.style.setProperty('--keycolor', (new Color.default("lch",[keyColor.light,keyColor.chroma,keyColor.hue])).hex);
 }
 const changeHue = (value) => {
-    getColor(keyColor, '--keycolor');
+    // getColor(keyColor, '--keycolor');
 
     keyColor.hue = value;
     setKeyColor();
@@ -103,7 +109,7 @@ const changeHue = (value) => {
     setFontColor();
 };
 const changeSat = (value) => {
-    getColor(keyColor, '--keycolor');
+    // getColor(keyColor, '--keycolor');
 
     keyColor.chroma = value;
     setKeyColor();
@@ -112,7 +118,7 @@ const changeSat = (value) => {
 };
 
 const changeLight = (value) => {
-    getColor(keyColor, '--keycolor');
+    // getColor(keyColor, '--keycolor');
 
     keyColor.light = value;
     setKeyColor();
@@ -174,15 +180,19 @@ const loadHistory = () => {
     for (let idx in datas) {
         const item = datas[idx];
         console.log(item);
-        const html = htmlToElement(`<div clasks="color" onclick="load(${idx})" style="background: linear-gradient(105deg, hsla(${item.lightShadow.hue}, ${item.lightShadow.chroma}%, ${item.lightShadow.light}%, ${item.lightShadow.opacity}) 0%, hsla(${item.darkShadow.hue}, ${item.darkShadow.chroma}%, ${item.darkShadow.light}%, ${item.darkShadow.opacity}) 100%)"></div>`);
+        const html = htmlToElement(`<div class="color" onclick="load(${idx})" style="background: linear-gradient(105deg, hsla(${item.lightShadow.hue}, ${item.lightShadow.chroma}%, ${item.lightShadow.light}%, ${item.lightShadow.opacity}) 0%, hsla(${item.darkShadow.hue}, ${item.darkShadow.chroma}%, ${item.darkShadow.light}%, ${item.darkShadow.opacity}) 100%)"></div>`);
         console.log(document.querySelector('#history'));
         document.querySelector('#history').appendChild(html);
     }
 }
 window.onload = () => {
-    getColor(keyColor, '--keycolor');
-    getColor(lightShadow, '--light-shadow');
-    getColor(darkShadow, '--dark-shadow');
+    // getColor(keyColor, '--keycolor');
+    // getColor(lightShadow, '--light-shadow');
+    // getColor(darkShadow, '--dark-shadow');
+
+    setKeyColor();
+    setShadows();
+    setFontColor();
 
     loadHistory();
 }
