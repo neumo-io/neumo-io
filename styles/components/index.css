@@ -27,14 +27,14 @@
     main {
         container: inline-size;
         container-name: content;
-        margin-top: 40px;
         display: flex;
         flex-direction: row;
-        height: calc(100% - 40px);
+        height: 100%;
+        overflow-y: hidden;
     }
 
     aside {
-        padding-top: 136px;
+        padding-top: 176px;
         max-width: 304px;
         width: 100%;
         transition: .2s;
@@ -47,7 +47,7 @@
         min-width: 340px;
         margin-left: auto;
         width: 100%;
-        height: calc(100% - 176px);
+        height: calc(100% - 136px);
         overflow-y: auto;
         scroll-behavior: smooth;
     }
