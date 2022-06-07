@@ -1,19 +1,19 @@
 let keyColor = {
-    hue: 210,
-    chroma: 35,
-    light: 20,
+    hue: 251,
+    chroma: 3,
+    light: 95,
     opacity: 1,
 }
 let lightShadow = {
-    hue: 210,
-    chroma: 35,
-    light: 20,
+    hue: 251,
+    chroma: 3,
+    light: 95,
     opacity: 1,
 }
 let darkShadow = {
-    hue: 210,
-    chroma: 35,
-    light: 20,
+    hue: 251,
+    chroma: 3,
+    light: 95,
     opacity: 1,
 }
 let intensity = {
