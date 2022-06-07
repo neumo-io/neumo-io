@@ -45,7 +45,7 @@
         border: 2px solid transparent;
     }
 
-    .hover, .active {
+    button .hover,button .active {
         opacity: 0;
         top: -2px;
         left: -2px;
@@ -54,12 +54,12 @@
         border: 2px solid transparent;
     }
 
-    .hover {
+    button .hover {
         background: linear-gradient(105deg, var(--keycolor) 0%, var(--keycolor) 100%) padding-box, linear-gradient(105deg, var(--light-shadow), var(--dark-shadow)) border-box;
         transition: ease .4s;
     }
 
-    .active {
+    button .active {
         background: linear-gradient(105deg, var(--light-shadow) 0%, var(--dark-shadow) 100%) padding-box, linear-gradient(105deg, var(--light-shadow), var(--dark-shadow)) border-box;
         box-shadow: inset -4px -4px 8px 0px var(--light-shadow), inset 4px 4px 8px 0px var(--dark-shadow);
         transition: ease .2s;
