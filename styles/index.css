@@ -14,6 +14,8 @@ body, html {
     position: relative;
     width: 752px;
     height: 400px;
+    padding-left:16px;
+    padding-right:16px;
 }
 
 .container img {
@@ -40,9 +42,21 @@ p {
     font-size: 18px;
     margin-top: 40px;
     margin-bottom: 82px;
+    padding-left:16px;
+    padding-right:16px;
+    text-align: center;
 }
 
 button {
-    width: 416px;
-    height: 60px;
+    max-width: 416px;
+    height: 60px !important;
+    width: calc(100% - 32px);
+    padding-left: 16px;
+    padding-right: 16px;
+}
+@media screen and (max-width: 500px){
+    .container{
+        width:calc(100vw - 32px);
+        height: calc(53.191vw - 32px);
+    }
 }
