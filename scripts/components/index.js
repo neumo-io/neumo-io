@@ -13,6 +13,13 @@ const activeDropDown = (el) =>{
     //     el.classList.remove('active');
     // }
 }
+const focusin = (el) => {
+    el.parentElement.classList.add('active');
+}
+const focusout = (el)=>{
+    el.parentElement.classList.remove('active');
+
+}
 const siteLoad = (el) => {
     console.log(el);
     el.style.height = el.contentWindow.document.body.scrollHeight + 'px';
