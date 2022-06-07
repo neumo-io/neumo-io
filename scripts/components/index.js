@@ -1,8 +1,17 @@
-const activeDropDown = (el) => {
+const activeDropDown = (el) =>{
+    //arcodian
     window.Neumo.dropDowns.forEach((dropDown)=>{
         dropDown.classList.remove('active');
-    })
+    });
     el.classList.add('active');
+
+    //drop-down
+    // if(!(el.classList.contains('active'))){
+    //     el.classList.add('active');
+    // }
+    // else{
+    //     el.classList.remove('active');
+    // }
 }
 const siteLoad = (el) => {
     console.log(el);
