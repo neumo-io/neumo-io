@@ -11,6 +11,7 @@
     #app {
         max-width: 1360px;
         width: calc(calc(100% - var(--app-padding)) - var(--app-padding));
+        height: 100vh;
         padding-left: var(--app-padding);
         padding-right: var(--app-padding);
         position: relative;
@@ -26,27 +27,49 @@
     main {
         container: inline-size;
         container-name: content;
-        margin-top: 188px;
+        margin-top: 40px;
         display: flex;
         flex-direction: row;
+        height:calc(100% - 40px);
     }
     aside{
-
+        padding-top: 136px;
         max-width: 304px;
         width: 100%;
         transition: .2s;
     }
     #page{
+        padding-top: 136px;
+        padding-bottom:40px;
         max-width: 864px;
         min-width: 340px;
         margin-left: auto;
         width: 100%;
+        height: calc(100% - 176px);
+        overflow-y: auto;
+        scroll-behavior: smooth;
     }
     @container content (max-width: 1312px){
         /* content 크기에 따른 미디어쿼리 */
         aside{
             width: 0;
         }
+    }
+    #page::-webkit-scrollbar {
+        height: 0px;
+        width: 0px;
+        margin-right: 0px;
+    }
+
+    #page::-webkit-scrollbar-thumb {
+        width:0px;
+        background-color: var(--purple-default);
+    }
+
+    #page::-webkit-scrollbar-track {
+        width:0px;
+
+        background-color: var(--cg100);
     }
 }
 @layer header-style {
