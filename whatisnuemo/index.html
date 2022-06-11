@@ -20,7 +20,8 @@
             <div class="dynamic-size">
                 <img class="logo" src="../assets/logo.svg"/>
                 <div class="search-box">
-                    <span>Text Input</span>
+                    <img src="../assets/search.svg"/>
+                    <span>Search Neumo</span>
                     <input class="search-input" required/>
                 </div>
                 <button class="round-button">
@@ -52,9 +53,9 @@
     <main>
         <aside>
             <section>
-                <div class="drop-down" onclick="activeDropDown(this)">
+                <div class="drop-down active" onclick="activeDropDown(this)">
                     <li>
-                        <strong>What is NUEMO?</strong>
+                        <strong>Overview</strong>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.80579 11.6006C6.47681 10.0682 5.81232 9.30205 6.04619 8.65102C6.28006 8 7.21979 8 9.09925 8H14.9008C16.7802 8 17.7199 8 17.9538 8.65102C18.1877 9.30205 17.5232 10.0682 16.1942 11.6006L13.2935 14.9454C12.6837 15.6485 12.3788 16 12 16C11.6212 16 11.3163 15.6485 10.7065 14.9454L7.80579 11.6006Z" fill="#3D454D"/>
                         </svg>
@@ -63,7 +64,7 @@
                     <li>Color System</li>
                     <li>Directions</li>
                 </div>
-                <div class="drop-down active" onclick="activeDropDown(this)">
+                <div class="drop-down" onclick="activeDropDown(this)">
                     <li>
                         <strong>Components</strong>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,7 +89,8 @@
             </section>
         </aside>
         <section id="page">
-
+            <iframe class="" src="/neumo-io/color-system/index.html"  frameborder="0" border="0" cellspacing="0"
+                    style="border-style: none;" onload="siteLoad(this)"></iframe>
         </section>
     </main>
 </div>
