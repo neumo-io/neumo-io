@@ -13,13 +13,15 @@
     <div class="container">
       <img class="main" src="assets/main/main.svg" />
       <img class="light-shadow" src="assets/main/light-shadow.svg" />
-      <img class="hover dark-shadow" src="assets/main/dark-shadow.svg" />
+      <img class="dark-shadow" src="assets/main/dark-shadow.svg" />
+      <img id="blue" src="assets/main/blue.svg" />
     </div>
     <p>
       NEOMO is a library designed to help developers develop web and app designs
       with neomorphism.
     </p>
     <button
+      id="lobby-btn"
       type="button"
       class="style default-shadow box-shadow"
       onclick="window.location.href='components/index.html'"
@@ -32,5 +34,14 @@
       </div>
       <span>Get Started</span>
     </button>
+    <script>
+      var btn = document.getElementById("lobby-btn");
+      var blue = document.getElementById("blue");
+      var container = document.getElementsByClassName("container")[0];
+      btn.onmouseover = function (e) {
+        blue.classList.add("hover");
+        container.classList.add("hover");
+      };
+    </script>
   </body>
 </html>

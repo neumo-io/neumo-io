@@ -42,7 +42,31 @@ html {
   filter: blur(6px);
   opacity: 0;
 }
-
+#blue {
+  z-index: 3;
+  opacity: 0;
+}
+#blue:not(.hover) {
+  opacity: 0;
+}
+#blue.hover {
+  transition: opacity ease 1s;
+  opacity: 1;
+}
+.container.hover {
+  animation: bluePopingAnimation 2s;
+}
+@keyframes bluePopingAnimation {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
@@ -88,6 +112,8 @@ button {
   width: calc(100% - 32px);
   padding-left: 16px;
   padding-right: 16px;
+}
+button:hover {
 }
 @media screen and (max-width: 500px) {
   .container {
