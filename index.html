@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
     <style>
-        @import 'styles/init.css';
-        @import 'styles/index.css';
-        @import 'color-system/button.css';
+      @import "styles/init.css";
+      @import "styles/index.css";
+      @import "color-system/button.css";
     </style>
-</head>
-<body>
-<div class="container">
-    <img class="normal" src="assets/main/normal.svg"/>
-    <img class="hover" src="assets/main/hover.svg"/>
-</div>
-<p>NEOMO is a library designed to help developers develop web and app designs with neomorphism.</p>
-<button type="button" class="style default-shadow box-shadow" onclick="window.location.href='components/index.html'">
-    <div class="hover float-shadow">
-        <span>Get Started</span>
+  </head>
+  <body>
+    <div class="container">
+      <img class="main" src="assets/main/main.svg" />
+      <img class="light-shadow" src="assets/main/light-shadow.svg" />
+      <img class="dark-shadow" src="assets/main/dark-shadow.svg" />
+      <img id="blue" src="assets/main/blue.svg" />
     </div>
-    <div class="active">
+    <p>
+      NEOMO is a library designed to help developers develop web and app designs
+      with neomorphism.
+    </p>
+    <button
+      id="lobby-btn"
+      type="button"
+      class="style default-shadow box-shadow"
+      onclick="window.location.href='components/index.html'"
+    >
+      <div class="hover float-shadow">
         <span>Get Started</span>
-    </div>
-    <span>Get Started</span>
-</button>
-</body>
+      </div>
+      <div class="active">
+        <span>Get Started</span>
+      </div>
+      <span>Get Started</span>
+    </button>
+    <script>
+      var btn = document.getElementById("lobby-btn");
+      var blue = document.getElementById("blue");
+      var container = document.getElementsByClassName("container")[0];
+      btn.onmouseover = function (e) {
+        blue.classList.add("hover");
+        container.classList.add("hover");
+      };
+    </script>
+  </body>
 </html>
