@@ -1,3 +1,5 @@
+// import Snd from 'snd-lib';
+
 const activeDropDown = (el) =>{
     //arcodian
     window.Neumo.dropDowns.forEach((dropDown)=>{
@@ -27,4 +29,5 @@ const siteLoad = (el) => {
 window.onload = () => {
     const dropDowns = document.querySelectorAll('.drop-down');
     window.Neumo = {dropDowns};
+
 }
