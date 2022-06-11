@@ -10,7 +10,7 @@
 
     #app {
         max-width: 1360px;
-        width: calc(calc(100% - var(--app-padding)) - var(--app-padding));
+        width: 1312px;
         height: 100vh;
         padding-left: var(--app-padding);
         padding-right: var(--app-padding);
@@ -41,7 +41,7 @@
     }
 
     #page {
-        padding-top: 136px;
+        padding-top: 176px;
         padding-bottom: 40px;
         max-width: 864px;
         min-width: 340px;
@@ -289,6 +289,46 @@
         margin-bottom: 12px;
         color: var(--cg500);
         font-size: 12px;
+    }
+}
+
+@layer page-style {
+    .chapter h1 {
+        margin-bottom: 80px;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 58px;
+        color: var(--blue-default);
+    }
+
+    .chapter h3 {
+        margin-bottom: 24px;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 38px;
+        color: var(--blue-default);
+    }
+
+    .chapter p{
+        color: var(--cg700);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .neumo-introduce {
+        display: flex;
+        flex-direction: row;
+        column-gap: 72px;
+    }
+
+    .neumo-introduce .logo .image {
+        display: block;
+        height: 200px;
+    }
+
+    .neumo-introduce .description {
+        font-size: 24px;
     }
 }
 

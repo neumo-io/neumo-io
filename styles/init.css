@@ -18,6 +18,7 @@
         --font-color: white;
         --background-color: var(--cg40);
         --depth-1-color: var(--cg20);
+        --blue-default: #0080FF;
 
         --direction-x: -4px;
         --direction-y: -4px;
