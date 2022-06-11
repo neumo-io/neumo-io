@@ -32,13 +32,12 @@ html {
   z-index: 1;
 }
 .light-shadow {
-  animation: lightShadowAnimation ease-in-out 1s forwards;
+  animation: lightShadowAnimation ease-in-out 1.5s 1s forwards;
   z-index: 2;
   background-color: var(--lobby-background-color);
 }
 .dark-shadow {
-  animation: darkShadowAnimation ease-in-out 1s forwards;
-
+  animation: darkShadowAnimation ease-in-out 1.5s 1s forwards;
   z-index: 0;
   filter: blur(6px);
   opacity: 0;
