@@ -32,17 +32,25 @@ html {
   z-index: 1;
 }
 .light-shadow {
-  animation: lightShadowAnimation ease-in-out 1.5s 1s forwards;
+  animation: lightShadowAnimation ease-in-out 1s 1s forwards;
   z-index: 2;
   background-color: var(--lobby-background-color);
 }
 .dark-shadow {
-  animation: darkShadowAnimation ease-in-out 1.5s 1s forwards;
+  animation: darkShadowAnimation ease-in-out 1s 1s forwards;
   z-index: 0;
   filter: blur(6px);
   opacity: 0;
 }
 
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes lightShadowAnimation {
   0% {
     opacity: 1;
@@ -61,6 +69,8 @@ html {
   }
 }
 p {
+  opacity: 0;
+  animation: fadeInAnimation ease-in-out 1s 2s forwards;
   color: var(--cg700);
   font-size: 18px;
   margin-top: 40px;
@@ -71,6 +81,8 @@ p {
 }
 
 button {
+  opacity: 0;
+  animation: fadeInAnimation ease-in-out 1s 3s forwards;
   max-width: 416px;
   height: 60px !important;
   width: calc(100% - 32px);
