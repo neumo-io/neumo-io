@@ -6,7 +6,7 @@
     <script src="https://colorjs.io/dist/color.js"></script>
     <style>
         @import '../styles/init.css';
-        @import '../styles/components/index.css';
+        @import '../styles/detail/index.css';
     </style>
     <script src='https://cdn.jsdelivr.net/gh/snd-lib/snd-lib@v1.0.0/dist/browser/snd.js?kit=01'></script>
     <script src="../scripts/detail/index.js"></script>
@@ -30,7 +30,7 @@
                 </button>
             </div>
             <div class="content padding-24">
-                <img class="logo" src="../assets/logo.svg"/>
+                <a href="/"><img class="logo" src="../assets/logo.svg"/></a>
                 <div class="search-box">
                     <img src="../assets/search.svg"/>
                     <span>Search Neumo</span>
@@ -65,7 +65,6 @@
                     </li>
                     <li>Overview</li>
                     <li>Color System</li>
-                    <li>Directions</li>
                 </div>
                 <div class="drop-down" onclick="activeDropDown(this,1)">
                     <li class="snd__transition_up">
@@ -76,8 +75,9 @@
                         </svg>
                     </li>
                     <li>Buttons</li>
-                    <li>Card</li>
-                    <li>Dropdown</li>
+                    <li>Toggle Switch</li>
+                    <li>Select Tab</li>
+                    <li>Text Input</li>
                 </div>
             </section>
             <section class="card">

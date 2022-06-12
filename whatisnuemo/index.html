@@ -6,15 +6,161 @@
     <script src="https://colorjs.io/dist/color.js"></script>
     <style>
         @import '../styles/init.css';
-        @import '../styles/components/index.css';
+        @import '../styles/whatisnuemo/index.css';
     </style>
-    <script src="../scripts/detail/index.js"></script>
+    <script src="../scripts/whatisnuemo/index.js"></script>
 </head>
 <body>
 <div id="app">
     <main>
         <section id="page">
-            <h2>What is NUEMO?</h2>
+            <article class="chapter" id="Overview">
+                <h2>What is NUEMO?</h2>
+                <h3>Overview</h3>
+                <p>
+                    In 2020, Neumorphism emerged as a new design trend, but some says that Neumorphism is like 'Zombie
+                    trend'.<br>
+                    It's because 'Neumorphism' rarely follow the 'Web Content Accessibility Guidelines'.<br>
+                    I totally agree with that, so I tried to design components that would improve accesssibility.
+                </p>
+                <div class="neumo-introduce">
+                    <div class="logo">
+                        <img class="image" src="../assets/main/hover.svg">
+                    </div>
+                    <div class="description">
+                        <p class="active">is a UI framework designed with Neumorphism.</p>
+                        <p class="active">suggests well-made UI components with Neumorphism.</p>
+                        <p class="active">will continue to be updated with the aim of providing various examples.</p>
+                    </div>
+                </div>
+            </article>
+            <hr/>
+            <article class="chapter" id="color-system">
+                <h3>Color System</h3>
+                <p>
+                    Creating rules for Neumorphism is a challenge. It's much more difficult than creating a typical UI
+                    design system.
+                </p>
+                <p>
+                    When we create a new design system, we may start by setting the primary color and setting the
+                    specifications.
+                </p>
+                <p>
+                    However, in Neumorphism, the bright side of the shadow, the dark side of the shadow, and the main
+                    color must be specified. While setting shadows manually will ruin the design system. In order to
+                    give a sense of unity, we had to create the best shadow when we set the key color.
+                </p>
+                <p>
+                    To make it happen, we used ‘CIE LCH color system’.
+                </p>
+                <h4>HSL</h4>
+                <div class="container first">
+                    <div>
+                        <div class="layout"></div>
+                        <p>
+                            HSL(120, 70, 45)
+                        </p>
+                        <p>
+                            HSL(120, 70, 60)
+                        </p>
+                        <p>
+                            HSL(120, 70, 75)
+                        </p>
+                    </div>
+                    <div>
+                        <div class="layout"></div>
+                        <p>
+                            HSL(60, 70, 45)
+                        </p>
+                        <p>
+                            HSL(60, 70, 60)
+                        </p>
+                        <p>
+                            HSL(60, 70, 75)
+                        </p>
+                    </div>
+                    <div>
+                        <div class="layout"></div>
+                        <p>
+                            HSL(240, 70, 45)
+                        </p>
+                        <p>
+                            HSL(240, 70, 60)
+                        </p>
+                        <p>
+                            HSL(240, 70, 75)
+                        </p>
+                    </div>
+                    <div>
+                        <div class="layout"></div>
+                        <p>
+                            HSL(360, 70, 45)
+                        </p>
+                        <p>
+                            HSL(360, 70, 60)
+                        </p>
+                        <p>
+                            HSL(360, 70, 75)
+                        </p>
+                    </div>
+                </div>
+                <h4>LCH</h4>
+                <div class="container second">
+                    <div>
+                        <div class="layout"></div>
+                        <p>
+                            LCH(88, 61, 139)
+
+
+                        </p>
+                        <p>
+                            LCH(82, 91, 136)
+                        </p>
+                        <p>
+                            LCH(73, 94, 145)
+                        </p>
+                    </div>
+                    <div>
+                        <div class="layout"></div>
+                        <p>
+                            LCH(88, 25, 59)
+
+                        </p>
+                        <p>
+                            LCH(82, 40, 59)
+
+                        </p>
+                        <p>
+                            LCH(73, 94, 60)
+                        </p>
+                    </div>
+                    <div>
+                        <div class="layout"></div>
+                        <p>
+                            LCH(88, 21, 241)
+                        </p>
+                        <p>
+                            LCH(82, 32, 240)
+
+                        </p>
+                        <p>
+                            LCH(73, 48, 240)
+                        </p>
+                    </div>
+                    <div>
+                        <div class="layout"></div>
+                        <p>
+                            LCH(88, 18, 0)
+                        </p>
+                        <p>
+                            LCH(82, 29, 1)
+                        </p>
+                        <p>
+                            LCH(73, 45, 1)
+                        </p>
+                    </div>
+                </div>
+            </article>
         </section>
     </main>
 </div>

@@ -28,6 +28,8 @@
     --text-direction-x-invert: 2px;
     --text-direction-y-invert: 2px;
     --app-padding: 24px;
+    --blue-default: #0080FF;
+
   }
 
   body,

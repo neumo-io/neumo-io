@@ -1,0 +1,178 @@
+@layer layout {
+    body, html {
+        display: flex;
+        flex-direction: column;
+        /*overflow-x: hidden;*/
+        align-items: center;
+        margin: 0;
+        padding-top: 72px;
+    }
+
+    h4 {
+        margin-top: 48px;
+        color: var(--cg900);
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+
+
+    }
+
+    .neumo-introduce {
+        display: flex;
+    }
+
+    .logo {
+        height: 300vh;
+    }
+
+    .logo img {
+        height: 200px;
+        position: sticky;
+        top: calc(50% - 100px);
+    }
+
+    .description {
+        height: 300vh;
+    }
+
+    #color-system {
+        padding-bottom: 400px;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .container {
+    }
+}
+@layer text-style {
+    h2, h3 {
+        color: var(--blue-default);
+        font-family: Inter;
+        letter-spacing: 0em;
+        text-align: left;
+
+    }
+
+    h2 {
+        font-weight: 400;
+        font-size: 48px;
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 32px;
+        margin-top: 80px;
+    }
+
+    p {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
+    .description p {
+        position: sticky;
+        top: calc(50% - 100px);
+        height: 100vh;
+        margin: 0;
+        margin-left: 72px;
+        padding-top: 68px;
+        opacity: 0;
+        transform: translateX(+100%);
+        transition: .2s ease-in-out;
+        line-height: 32px;
+        vertical-align: middle;
+        font-size: 24px;
+        font-weight: 400;
+        letter-spacing: 0em;
+        text-align: left;
+
+    }
+
+    .description p.active {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    .description *:last-child {
+        position: sticky;
+        height: 120px;
+    }
+}
+@layer neuomorphism {
+    .container {
+        display: flex;
+        flex-direction: row;
+        grid-gap: 32px;
+    }
+
+    .layout {
+        margin-bottom: 24px;
+        height: 192px;
+        width: 192px;
+        border-radius: 24px;
+        box-shadow: 0px 0px 0px 0px #0000000F, inset 16px 16px 16px var(--cg40), inset -16px -16px 16px var(--cg40);
+        transition: .2s ease-in-out;
+        background-color: var(--cg40);
+    }
+
+    .container p {
+        text-align: center;
+        margin: 0;
+        opacity: 0;
+        transition: .5s ease-in-out;
+    }
+
+    .container p.active {
+        opacity: 1;
+    }
+
+    .container.first div:nth-child(1) .layout.active {
+        background-color: #47EB47;
+        box-shadow: 0px 4px 8px 0px #0000000F, inset 16px 16px 16px #8CF28C, inset -16px -16px 16px #17CF17;
+    }
+
+    .container.first div:nth-child(2) .layout.active {
+        background-color: #EBEB47;
+        box-shadow: 0px 4px 8px 0px #0000000F, inset 16px 16px 16px #F2F28C, inset -16px -16px 16px #CFCF17;
+    }
+
+    .container.first div:nth-child(3) .layout.active {
+        background-color: #4747EB;
+        box-shadow: 0px 4px 8px 0px #0000000F, inset 16px 16px 16px #8C8CF2, inset -16px -16px 16px #1717CF;
+    }
+
+    .container.first div:nth-child(4) .layout.active {
+        background-color: #EB4747;
+        box-shadow: 0px 4px 8px 0px #0000000F, inset 16px 16px 16px #F28C8C, inset -16px -16px 16px #CF1717;
+    }
+
+    .container.second div:nth-child(1) .layout.active {
+        background-color: #47EB47;
+        box-shadow: 0px 4px 8px 0px #0000000F, inset 16px 16px 16px #8CF28C, inset -16px -16px 16px #17CF17;
+    }
+
+    .container.second div:nth-child(2) .layout.active {
+        background-color: #FFBD8C;
+        box-shadow: 0px 4px 8px 0px #0000000F, inset 16px 16px 16px #FFD4B5, inset -16px -16px 16px #FF9942;
+    }
+
+    .container.second div:nth-child(3) .layout.active {
+        background-color: #96D6FA;
+        box-shadow: 0px 4px 8px 0px #0000000F, inset 16px 16px 16px #B8E3FF, inset -16px -16px 16px #24C2FF;
+    }
+
+    .container.second div:nth-child(4) .layout.active {
+        background: #FFB8CC;
+        box-shadow: 0px 4px 8px 0px #0000000F, inset 16px 16px 16px #FFD1DE, inset -16px -16px 16px #FF91B5;
+    }
+}
