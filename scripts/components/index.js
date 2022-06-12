@@ -4,7 +4,6 @@ const activeDropDown = (el) => {
     dropDown.classList.remove("active");
   });
   el.classList.add("active");
-
   //drop-down
   // if(!(el.classList.contains('active'))){
   //     el.classList.add('active');

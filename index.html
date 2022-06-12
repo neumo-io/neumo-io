@@ -8,6 +8,7 @@
       @import "styles/index.css";
       @import "color-system/button.css";
     </style>
+    <script src='https://cdn.jsdelivr.net/gh/snd-lib/snd-lib@v1.0.0/dist/browser/snd.js?kit=01'></script>
   </head>
   <body>
     <div class="container">
@@ -23,13 +24,13 @@
     <button
       id="lobby-btn"
       type="button"
-      class="style default-shadow box-shadow"
-      onclick="window.location.href='components/index.html'"
+      class="style default-shadow box-shadow snd__celebration"
+      onclick="setTimeout(()=>{window.location.href='detail.html'},1000)"
     >
       <div class="hover float-shadow">
         <span>Get Started</span>
       </div>
-      <div class="active">
+      <div class="active snd__celebration">
         <span>Get Started</span>
       </div>
       <span>Get Started</span>
