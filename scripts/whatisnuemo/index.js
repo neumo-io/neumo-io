@@ -30,6 +30,9 @@ window.onscroll = (e) => {
         document.querySelectorAll('.container > div .layout').forEach((el, idx) => {
             setTimeout(() => {
                 if (window.percentage >= 70) {
+                    if(!el.classList.contains('active')){
+                        parent.snd.play(Snd.SOUNDS.TRANSITION_UP);
+                    }
                     el.classList.add('active')
                 }
             }, 150 * idx);
@@ -37,7 +40,7 @@ window.onscroll = (e) => {
         document.querySelectorAll('.container > div p').forEach((el, idx) => {
             setTimeout(() => {
                 if (window.percentage >= 70) {
-                    el.classList.add('active')
+                    el.classList.add('active');
                 }
             }, 40 * idx);
         })
@@ -46,6 +49,9 @@ window.onscroll = (e) => {
             if (el.classList.contains('active')) {
                 setTimeout(() => {
                     if (window.percentage < 70) {
+                        if(el.classList.contains('active')){
+                            parent.snd.play(Snd.SOUNDS.TRANSITION_DOWN);
+                        }
                         el.classList.remove('active')
                     }
                 }, 150 * (arr.length - idx));
@@ -72,4 +78,6 @@ function scroll(percentage) {
 }
 window.onload = function(){
     window.parent.active(0, 0);
+    // window.snd = new Snd();
+    // window.snd.load(Snd.KITS.SND01);
 };

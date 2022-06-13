@@ -168,6 +168,8 @@
         background: var(--depth-1-color);
         box-shadow: -4px -4px 6px #FFFFFF, 4px 4px 6px #D2D4D5;
         position: relative;
+        opacity: 0;
+        display: none;
     }
 
     .round, .round * {

@@ -24,6 +24,16 @@ window.onscroll = (e) => {
     window.percentage = percentage;
 };
 
+/* text input */
+const focusin = (el) => {
+    el.parentElement.classList.add("active");
+};
+const focusout = (el) => {
+    el.parentElement.classList.remove("active");
+    snd.play(Snd.SOUNDS.TRANSITION_DOWN);
+};
+/* search input end */
+
 function scroll(percentage) {
 
     let scrollHeight = Math.max(
@@ -35,4 +45,6 @@ function scroll(percentage) {
 }
 window.onload = function(){
     window.parent.active(1, 0);
+    window.snd = new Snd();
+    window.snd.load(Snd.KITS.SND01);
 };

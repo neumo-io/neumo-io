@@ -53,15 +53,29 @@
         margin-top: 32px;
         margin-bottom: 32px;
     }
-    .frame{
+
+    .frame {
+        display: flex;
         background-color: var(--cg40);
         box-shadow: -10px -10px 20px 0px #FFFFFF inset, 10px 10px 20px 0px #DAE0E6 inset;
-        height: 424px;
-        width: 100%;
+        height: 230px;
+        width: calc(100% - 194px);
         border-radius: 16px;
+        justify-content: center;
+        align-items: center;
+        padding: 97px;
     }
-    .chapter:last-child{
+
+    .chapter:last-child {
         margin-bottom: 105px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        height: 100%;
+        grid-gap: 39.5px;
     }
 }
 @layer text-style {
@@ -119,5 +133,270 @@
     .description *:last-child {
         position: sticky;
         height: 120px;
+    }
+}
+@layer neumorphism-style {
+    .border {
+        position: absolute;
+        background: linear-gradient(180deg, #FFFFFF 0%, #E1E6EC 100%);
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .solid {
+        position: absolute;
+        left: 2px;
+        right: 2px;
+        top: 2px;
+        bottom: 2px;
+    }
+
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .dynamic-size {
+        padding: 24px;
+        visibility: hidden;
+        display: flex;
+    }
+
+    .status {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        z-index: 1;
+        transition: .2s ease;
+    }
+}
+@layer button {
+    button {
+        display: flex;
+        border: 0;
+        justify-content: center;
+        align-items: center;
+        /*background: var(--depth-1-color);*/
+        /*box-shadow: -4px -4px 6px #FFFFFF, 4px 4px 6px #D2D4D5;*/
+        position: relative;
+        opacity: 1;
+
+    }
+
+    button * {
+        font-family: Spoqa Han Sans Neo;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 48px;
+        letter-spacing: 0px;
+        text-align: center;
+        transition: .2s ease;
+    }
+
+    button .solid {
+        left: 4px;
+        right: 4px;
+        top: 4px;
+        bottom: 4px;
+        border-radius: 12px;
+
+    }
+
+    button .border {
+        border-radius: 14px;
+        box-shadow: -10px -10px 20px #FFFFFF, 10px 10px 20px #DAE0E6;
+    }
+
+    /* first button */
+    button.first {
+        color: white;
+        cursor: pointer;
+    }
+    button.first .hover .border{
+        background: linear-gradient(105.46deg, #66CCFF 0%, #0073E5 100%);
+        box-shadow: 0px -10px 20px #FFFFFF, 0px 10px 40px #B8C2CC;
+    }
+    button.first .hover .solid{
+        background: linear-gradient(105.46deg, #3399FF 0%, #3399FF 100%);
+    }
+    button.first:hover .hover {
+        opacity:1;
+    }
+    button.first .active .border{
+        background: linear-gradient(115.13deg, #7CE5FF 17.3%, #0066CC 65.96%);
+    }
+    button.first .active .solid{
+        background: linear-gradient(105.46deg, #66CCFF 0%, #0073E5 100%);
+        box-shadow: inset -4px -4px 8px #66B3FF, inset 4px 4px 8px #0073E5;
+    }
+    button.first:active .active{
+        opacity: 1;
+    }
+    button.first:active .hover {
+        opacity: 0;
+    }
+
+    button.first .solid {
+        background: linear-gradient(105.46deg, #66CCFF 0%, #0073E5 100%);
+    }
+
+    button.first .border {
+        background: linear-gradient(115.13deg, #7CE5FF 17.3%, #0066CC 65.96%);
+    }
+
+    button.first .content {
+        border-radius: 14px;
+    }
+
+    /* second button */
+    button.second {
+        color: white;
+        cursor: pointer;
+
+    }
+    button.second .hover .border{
+        background: #199FFF;
+        box-shadow: 0px -10px 20px #FFFFFF, 0px 10px 40px #B8C2CC;
+    }
+    button.second .hover .solid{
+        background: #199FFF;
+    }
+    button.second:hover .hover {
+        opacity:1;
+    }
+    button.second .active .border{
+        background: linear-gradient(115.13deg, #7CE5FF 17.3%, #0066CC 65.96%);
+    }
+    button.second .active .solid{
+        background: linear-gradient(105.46deg, #66CCFF 0%, #0073E5 100%);
+        box-shadow: inset -4px -4px 8px #66B3FF, inset 4px 4px 8px #0073E5;
+    }
+    button.second:active .active{
+        opacity: 1;
+    }
+    button.second:active .hover {
+        opacity: 0;
+    }
+
+    button.second .solid {
+        background: #0080FF;
+    }
+
+    button.second .border {
+        background: #0080FF;
+    }
+
+    button.second .content {
+        border-radius: 14px;
+    }
+    /* third button */
+    button.third {
+        color: #0080FF;
+        cursor: pointer;
+
+    }
+    button.third:active {
+    }
+    button.third .hover .border{
+        background: white;
+        box-shadow: 0px -10px 20px #FFFFFF, 0px 10px 40px #B8C2CC;
+    }
+    button.third .hover .solid{
+        background: white;
+    }
+    button.third:hover .hover {
+        opacity:1;
+    }
+    button.third .active .border{
+        background: linear-gradient(115.13deg, #FFFFFF 17.3%, #DAE0E6 65.96%);
+    }
+    button.third .active .solid{
+        background: linear-gradient(105.46deg, var(--cg20) 0%, var(--cg40) 100%);
+        box-shadow: inset -4px -4px 8px #FFFFFF, inset 4px 4px 8px #B8C2CC;
+    }
+    button.third:active .active{
+        opacity: 1;
+    }
+    button.third:active .hover {
+        opacity: 0;
+    }
+
+    button.third .solid {
+        background: var(--cg20);
+    }
+
+    button.third .border {
+        background: var(--cg20);
+    }
+
+    button.third .content {
+        border-radius: 14px;
+    }
+    /* fourth button */
+    button.fourth {
+        color: #98A5B3;
+        cursor: not-allowed;
+    }
+    button.fourth .solid {
+        background: var(--cg20);
+    }
+
+    button.fourth .border {
+        background: linear-gradient(115.13deg, #FFFFFF 17.3%, #DAE0E6 65.96%);
+    }
+
+    button.fourth .content {
+        border-radius: 14px;
+    }
+}
+@layer text-input {
+    .text-box {
+        position: relative;
+        width: 308px;
+        height: 24px;
+        padding: 12px;
+        box-shadow: inset -4px -4px 8px #FFFFFF, inset 4px 4px 8px #B8C2CC, 0px 0px 0px var(--cg00), 0px 0px 0px var(--cg100);
+        border-radius: 8px;
+        align-items: center;
+        display: flex;
+        color: var(--cg300);
+        transition: .2s ease-in-out;
+    }
+
+    .text-box.active {
+        background: var(--cg00);
+        box-shadow: inset 0px 0px 0px 0px var(--cg00), inset 0px 0px 0px 0px var(--cg00), -10px -10px 20px var(--cg00), 10px 10px 32px var(--cg100);
+    }
+
+    .text-input {
+        background: var(--cg40);
+        border: 0;
+        font-size: 18px;
+        position: absolute;
+        top: 12px;
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+        transition: .2s;
+    }
+
+    .text-input:focus {
+        border: 0;
+        outline: none;
+        background-color: var(--cg00);
+    }
+
+    .text-input:invalid {
+        background: transparent;
     }
 }
