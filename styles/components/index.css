@@ -442,6 +442,7 @@
         position: relative;
         overflow: hidden;
     }
+
     .toggle .status {
         border-radius: 40px;
         background: linear-gradient(105.46deg, #66CCFF 0%, #0073E5 100%);
@@ -457,6 +458,7 @@
         transform-origin: left;
         transform: scaleX(0);
     }
+
     .toggle-button {
         box-sizing: border-box;
         width: 72px;
@@ -469,11 +471,72 @@
         left: 4px;
         z-index: 1;
     }
+
     .toggle.active .status {
         opacity: 1;
         transform: scaleX(100%);
     }
+
     .toggle.active .toggle-button {
         left: calc(100% - 76px);
+    }
+}
+@layer select {
+    .select {
+        display: flex;
+
+    }
+
+    .select li {
+        list-style: none;
+        position: relative;
+    }
+
+    .select .indicator {
+        background: #EDF1F5;
+        filter: blur(20px);
+        border-radius: 8px;
+        width: 100%;
+        height: 8px;
+        position: relative;
+    }
+    .select .indicator *{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height: 100%;
+        border-radius: 8px;
+    }
+    .select .indicator .before{
+        background: #EDF1F5;
+        filter: blur(20px);
+        z-index: 0;
+    }
+    .select .indicator .normal{
+        background: #DBE5F0;
+        box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.4), 4px 4px 8px #B3BFCC, inset -2px -2px 4px #BECAD6, inset 2px 2px 4px #FFFFFF;
+        filter: blur(4px);
+        opacity: 0;
+        z-index: 1;
+    }
+    .select .indicator .after{
+        background: linear-gradient(105.46deg, #66CCFF 0%, #0073E5 100%);
+        box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.4), 4px 4px 8px #88D5FF, inset -2px -2px 4px #0086DE, inset 2px 2px 4px #36BAFF;
+        opacity: 0;
+        z-index: 2;
+    }
+    .select .indicator.active .before{
+        opacity: 0;
+        transition: .2s ease;
+    }
+    .select .indicator.active .normal{
+        transition: .2s ease;
+        opacity: 1;
+    }
+    .select .indicator.active .after{
+        transition: .1ms ease;
+        transition-delay: .19s;
+        opacity: 1;
     }
 }

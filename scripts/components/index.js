@@ -36,9 +36,11 @@ const focusout = (el) => {
 const toggle = (el) => {
     if(el.classList.contains('active')){
         el.classList.remove('active');
+        snd.play(Snd.SOUNDS.TOGGLE_OFF);
     }
     else{
         el.classList.add('active');
+        snd.play(Snd.SOUNDS.TOGGLE_ON);
     }
 }
 
