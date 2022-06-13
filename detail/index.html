@@ -55,29 +55,29 @@
     <main>
         <aside>
             <section>
-                <div class="drop-down active" onclick="activeDropDown(this,0)">
-                    <li class="snd__transition_up">
+                <div class="drop-down active">
+                    <li class="snd__transition_up" onclick="activeDropDown(this,0)">
                         <strong>What is NUEMO?</strong>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.80579 11.6006C6.47681 10.0682 5.81232 9.30205 6.04619 8.65102C6.28006 8 7.21979 8 9.09925 8H14.9008C16.7802 8 17.7199 8 17.9538 8.65102C18.1877 9.30205 17.5232 10.0682 16.1942 11.6006L13.2935 14.9454C12.6837 15.6485 12.3788 16 12 16C11.6212 16 11.3163 15.6485 10.7065 14.9454L7.80579 11.6006Z"
                                   fill="#3D454D"/>
                         </svg>
                     </li>
-                    <li>Overview</li>
-                    <li>Color System</li>
+                    <li class="active" onclick="menuClick(this,0)">Overview</li>
+                    <li onclick="menuClick(this,61)">Color System</li>
                 </div>
-                <div class="drop-down" onclick="activeDropDown(this,1)">
-                    <li class="snd__transition_up">
+                <div class="drop-down">
+                    <li class="snd__transition_up" onclick="activeDropDown(this,1)">
                         <strong>Components</strong>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.80579 11.6006C6.47681 10.0682 5.81232 9.30205 6.04619 8.65102C6.28006 8 7.21979 8 9.09925 8H14.9008C16.7802 8 17.7199 8 17.9538 8.65102C18.1877 9.30205 17.5232 10.0682 16.1942 11.6006L13.2935 14.9454C12.6837 15.6485 12.3788 16 12 16C11.6212 16 11.3163 15.6485 10.7065 14.9454L7.80579 11.6006Z"
                                   fill="#3D454D"/>
                         </svg>
                     </li>
-                    <li>Buttons</li>
-                    <li>Toggle Switch</li>
-                    <li>Select Tab</li>
-                    <li>Text Input</li>
+                    <li class="active" onclick="menuClick(this,0)">Buttons</li>
+                    <li onclick="menuClick(this,21)">Toggle Switch</li>
+                    <li onclick="menuClick(this,41)">Select Tab</li>
+                    <li onclick="menuClick(this,61)">Text Input</li>
                 </div>
             </section>
             <section class="card">

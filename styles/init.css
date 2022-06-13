@@ -61,3 +61,8 @@
     padding: 24px;
   }
 }
+@layer layout{
+  #page{
+    transition: .2s ease-in-out;
+  }
+}

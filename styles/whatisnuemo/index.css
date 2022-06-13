@@ -6,6 +6,7 @@
         align-items: center;
         margin: 0;
         padding-top: 72px;
+        scroll-behavior: smooth;
     }
 
     h4 {
@@ -17,8 +18,6 @@
         line-height: 29px;
         letter-spacing: 0em;
         text-align: left;
-
-
     }
 
     .neumo-introduce {
@@ -56,7 +55,6 @@
         font-family: Inter;
         letter-spacing: 0em;
         text-align: left;
-
     }
 
     h2 {

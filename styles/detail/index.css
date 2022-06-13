@@ -187,7 +187,7 @@
             align-items: center;
             border-radius: 8px;
             cursor: pointer;
-            transition: .2s;
+            transition: .3s ease-in-out;
         }
 
         .drop-down li:first-child {
@@ -198,7 +198,7 @@
 
         .drop-down li:first-child svg {
             margin-left: auto;
-            transition: .2s;
+            transition: .3s;
             transform-origin: center;
         }
 
@@ -208,6 +208,8 @@
             padding: 0;
             overflow: hidden;
             font-size: 14px;
+            background-color: var(--cg40);
+            box-shadow: 0px 0px 0px var(--cg40), 0px 0px 0px var(--cg40);
         }
 
         .drop-down li:last-child {
@@ -261,6 +263,12 @@
 
         .drop-down.active li:first-child svg path {
             fill: var(--keycolor);
+        }
+
+        .drop-down li:not(:first-child).active {
+            background-color: var(--cg20);
+            color: var(--keycolor);
+            box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.5), 2px 2px 4px #DAE0E6;
         }
     }
 
