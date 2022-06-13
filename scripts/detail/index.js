@@ -8,9 +8,9 @@ const activeDropDown = (el, num) => {
         el.parentElement.classList.add("active");
 
         if (num == 0) {
-            document.querySelector('#page iframe').src = "/whatisnuemo/";
+            document.querySelector('#page iframe').src = "/neumo-io/whatisnuemo/";
         } else if (num == 1) {
-            document.querySelector('#page iframe').src = "/components/";
+            document.querySelector('#page iframe').src = "/neumo-io/components/";
         }
     }, 200);
 

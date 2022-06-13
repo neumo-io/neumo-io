@@ -468,17 +468,11 @@
         position: absolute;
         left: 4px;
         z-index: 1;
-
     }
-
-
-
     .toggle.active .status {
         opacity: 1;
         transform: scaleX(100%);
-
     }
-
     .toggle.active .toggle-button {
         left: calc(100% - 76px);
     }
