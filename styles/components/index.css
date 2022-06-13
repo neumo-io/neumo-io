@@ -222,26 +222,33 @@
         color: white;
         cursor: pointer;
     }
-    button.first .hover .border{
+
+    button.first .hover .border {
         background: linear-gradient(105.46deg, #66CCFF 0%, #0073E5 100%);
         box-shadow: 0px -10px 20px #FFFFFF, 0px 10px 40px #B8C2CC;
     }
-    button.first .hover .solid{
+
+    button.first .hover .solid {
         background: linear-gradient(105.46deg, #3399FF 0%, #3399FF 100%);
     }
+
     button.first:hover .hover {
-        opacity:1;
+        opacity: 1;
     }
-    button.first .active .border{
+
+    button.first .active .border {
         background: linear-gradient(115.13deg, #7CE5FF 17.3%, #0066CC 65.96%);
     }
-    button.first .active .solid{
+
+    button.first .active .solid {
         background: linear-gradient(105.46deg, #66CCFF 0%, #0073E5 100%);
         box-shadow: inset -4px -4px 8px #66B3FF, inset 4px 4px 8px #0073E5;
     }
-    button.first:active .active{
+
+    button.first:active .active {
         opacity: 1;
     }
+
     button.first:active .hover {
         opacity: 0;
     }
@@ -264,26 +271,33 @@
         cursor: pointer;
 
     }
-    button.second .hover .border{
+
+    button.second .hover .border {
         background: #199FFF;
         box-shadow: 0px -10px 20px #FFFFFF, 0px 10px 40px #B8C2CC;
     }
-    button.second .hover .solid{
+
+    button.second .hover .solid {
         background: #199FFF;
     }
+
     button.second:hover .hover {
-        opacity:1;
+        opacity: 1;
     }
-    button.second .active .border{
+
+    button.second .active .border {
         background: linear-gradient(115.13deg, #7CE5FF 17.3%, #0066CC 65.96%);
     }
-    button.second .active .solid{
+
+    button.second .active .solid {
         background: linear-gradient(105.46deg, #66CCFF 0%, #0073E5 100%);
         box-shadow: inset -4px -4px 8px #66B3FF, inset 4px 4px 8px #0073E5;
     }
-    button.second:active .active{
+
+    button.second:active .active {
         opacity: 1;
     }
+
     button.second:active .hover {
         opacity: 0;
     }
@@ -299,34 +313,43 @@
     button.second .content {
         border-radius: 14px;
     }
+
     /* third button */
     button.third {
         color: #0080FF;
         cursor: pointer;
 
     }
+
     button.third:active {
     }
-    button.third .hover .border{
+
+    button.third .hover .border {
         background: white;
         box-shadow: 0px -10px 20px #FFFFFF, 0px 10px 40px #B8C2CC;
     }
-    button.third .hover .solid{
+
+    button.third .hover .solid {
         background: white;
     }
+
     button.third:hover .hover {
-        opacity:1;
+        opacity: 1;
     }
-    button.third .active .border{
+
+    button.third .active .border {
         background: linear-gradient(115.13deg, #FFFFFF 17.3%, #DAE0E6 65.96%);
     }
-    button.third .active .solid{
+
+    button.third .active .solid {
         background: linear-gradient(105.46deg, var(--cg20) 0%, var(--cg40) 100%);
         box-shadow: inset -4px -4px 8px #FFFFFF, inset 4px 4px 8px #B8C2CC;
     }
-    button.third:active .active{
+
+    button.third:active .active {
         opacity: 1;
     }
+
     button.third:active .hover {
         opacity: 0;
     }
@@ -342,11 +365,13 @@
     button.third .content {
         border-radius: 14px;
     }
+
     /* fourth button */
     button.fourth {
         color: #98A5B3;
         cursor: not-allowed;
     }
+
     button.fourth .solid {
         background: var(--cg20);
     }
@@ -398,5 +423,63 @@
 
     .text-input:invalid {
         background: transparent;
+    }
+}
+@layer toggle {
+    .toggle {
+        box-sizing: border-box;
+
+        width: 160px;
+        height: 80px;
+
+        /* Coolgray/CG40 */
+
+        background: #EDF1F5;
+        box-shadow: inset -4px -4px 8px #FFFFFF, inset 4px 4px 8px #DAE0E6;
+        border-radius: 40px;
+        padding: 4px;
+        transition: .2s ease-in-out;
+        position: relative;
+        overflow: hidden;
+    }
+    .toggle .status {
+        border-radius: 40px;
+        background: linear-gradient(105.46deg, #66CCFF 0%, #0073E5 100%);
+        box-shadow: inset -4px -4px 8px #66CCFF, inset 4px 4px 8px #0080FF;
+        opacity: 0;
+        transition: .2s ease-in-out;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+    .toggle-button {
+        box-sizing: border-box;
+        width: 72px;
+        height: 72px;
+        background: linear-gradient(135deg, #F7F9FA 0%, #EDF1F5 100%);
+        box-shadow: 2px 2px 4px #DAE0E6;
+        border-radius: 36px;
+        transition: .2s ease-in-out;
+        position: absolute;
+        left: 4px;
+        z-index: 1;
+
+    }
+
+
+
+    .toggle.active .status {
+        opacity: 1;
+        transform: scaleX(100%);
+
+    }
+
+    .toggle.active .toggle-button {
+        left: calc(100% - 76px);
     }
 }

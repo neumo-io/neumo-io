@@ -10,13 +10,11 @@ window.onscroll = (e) => {
     console.log(percentage);
     if (percentage >= 0 && percentage < 15) {
         window.parent.active(1, 0);
-    } else if(percentage >= 20 && percentage < 40) {
+    } else if (percentage >= 20 && percentage < 40) {
         window.parent.active(1, 1);
-    }
-    else if(percentage >= 40 && percentage < 60) {
+    } else if (percentage >= 40 && percentage < 60) {
         window.parent.active(1, 2);
-    }
-    else if( percentage >= 60){
+    } else if (percentage >= 60) {
         window.parent.active(1, 3);
     }
 
@@ -32,8 +30,19 @@ const focusout = (el) => {
     el.parentElement.classList.remove("active");
     snd.play(Snd.SOUNDS.TRANSITION_DOWN);
 };
-/* search input end */
+/* text input end */
 
+/* toggle */
+const toggle = (el) => {
+    if(el.classList.contains('active')){
+        el.classList.remove('active');
+    }
+    else{
+        el.classList.add('active');
+    }
+}
+
+/* toggle end */
 function scroll(percentage) {
 
     let scrollHeight = Math.max(
@@ -43,7 +52,8 @@ function scroll(percentage) {
     );
     window.scrollTo(0, percentage / 100 * scrollHeight);
 }
-window.onload = function(){
+
+window.onload = function () {
     window.parent.active(1, 0);
     window.snd = new Snd();
     window.snd.load(Snd.KITS.SND01);
