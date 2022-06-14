@@ -324,6 +324,9 @@
         display: flex;
         opacity: 1;
     }
+    header{
+        min-width: 864px;
+    }
 }
 
 /*@media screen and (max-width: 500px) {*/
