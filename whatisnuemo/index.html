@@ -24,6 +24,7 @@
                     It's because 'Neumorphism' rarely follow the 'Web Content Accessibility Guidelines'.<br>
                     I totally agree with that, so I tried to design components that would improve accesssibility.
                 </p>
+                <img src="../assets/preview.png"/>
                 <div class="neumo-introduce">
                     <div class="logo">
                         <img class="image" src="../assets/main/hover.svg">
@@ -54,7 +55,12 @@
                 <p>
                     To make it happen, we used ‘CIE LCH color system’.
                 </p>
-                <h4>HSL</h4>
+                <h4>Why don’t we use HSL Color?</h4>
+                <p>
+                    In order to automate neumorphism design, we need to programmatically present the visual intensity of the<br/> shadow values. However, we see the intensity of shadows differently by actual color lightness/darkness even if it<br/> is set with the same lightness difference.<br/>
+                    You can see that the green, yellow, blue, and red boxes below have different shadow intensities.<br/>
+                    <strong>Only the hue has been adjusted, but we feel the tones of colors are different.<br/> (green & yellow are brighter than blue & red)</strong>
+                </p>
                 <div class="container first">
                     <div>
                         <div class="layout"></div>
@@ -105,7 +111,12 @@
                         </p>
                     </div>
                 </div>
-                <h4>LCH</h4>
+                <h4>How does it come with LCH Color?</h4>
+                <p>
+                    Unlike other color systems, LCH calibrated the visual tone that the user feel.<br/>
+                    Changing the hue of LCH color shows the real hue that people think.<br/>
+                    <strong>Test your own color & intensity of shadows!</strong>
+                </p>
                 <div class="container second">
                     <div>
                         <div class="layout"></div>
@@ -157,6 +168,10 @@
                     </div>
                 </div>
             </article>
+        </section>
+        <section id="color-system-page">
+            <iframe class="active" src="/neumo-io/color-system/index.html" frameborder="0" border="0" cellspacing="0"
+                    style="border-style: none;" ></iframe>
         </section>
     </main>
 </div>

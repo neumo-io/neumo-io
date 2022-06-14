@@ -81,3 +81,10 @@ window.onload = function(){
     // window.snd = new Snd();
     // window.snd.load(Snd.KITS.SND01);
 };
+const siteLoad = (el) => {
+    // el.style.height = el.contentWindow.document.body.scrollHeight + "px";
+    setTimeout(() => {
+        el.classList.add('active')
+    }, 200);
+
+};

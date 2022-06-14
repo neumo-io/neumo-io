@@ -86,7 +86,7 @@ const focusin = (el) => {
 const focusout = (el) => {
     el.parentElement.classList.remove("active");
     window.snd.play(Snd.SOUNDS.TRANSITION_DOWN);
-    // now = undefined;
+    now = undefined;
 };
 /* search input end */
 
