@@ -45,6 +45,22 @@ const toggle = (el) => {
 }
 
 /* toggle end */
+
+/* select */
+const selectMenu = (el, className)=>{
+    document.querySelectorAll('.select.first .item').forEach((item)=>{
+        item.classList.remove('active');
+    })
+    el.classList.add('active');
+    document.querySelector('.indicator').classList.remove('first')
+    document.querySelector('.indicator').classList.remove('second')
+    document.querySelector('.indicator').classList.remove('third')
+
+    document.querySelector('.indicator').classList.add(className);
+    snd.play(Snd.SOUNDS.TRANSITION_UP);
+}
+/* select end */
+
 function scroll(percentage) {
 
     let scrollHeight = Math.max(

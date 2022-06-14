@@ -59,23 +59,27 @@ const inputChange = (el) => {
     ];
     const matchedMenu2 = category2.find((item) => item.data.indexOf(el.value.toLowerCase()) >= 0);
     const matchedMenu1 = category1.find((item) => item.data.indexOf(el.value.toLowerCase()) >= 0);
-    setTimeout(()=>{
+    setTimeout(() => {
         if (category2.some(item => item.data.indexOf(el.value.toLowerCase()) >= 0)) {
-            if(now === undefined || matchedMenu2.category !== now.category)
+            if (now === undefined || matchedMenu2.category !== now.category)
                 activeDropDown(document.querySelector(".drop-down:first-child li"), 0);
-            if(now === undefined || matchedMenu2.menu !== now.menu)
-                setTimeout(()=>{document.querySelectorAll(".drop-down:first-child li")[matchedMenu2.menu + 1].click();},1000);
+            if (now === undefined || matchedMenu2.menu !== now.menu)
+                setTimeout(() => {
+                    document.querySelectorAll(".drop-down:first-child li")[matchedMenu2.menu + 1].click();
+                }, 1000);
             now = matchedMenu2;
-        }else if (category1.some(item => item.data.indexOf(el.value.toLowerCase()) >= 0)) {
+        } else if (category1.some(item => item.data.indexOf(el.value.toLowerCase()) >= 0)) {
 
-            if(now === undefined || matchedMenu1.category !== now.category)
+            if (now === undefined || matchedMenu1.category !== now.category)
                 activeDropDown(document.querySelector(".drop-down:last-child li"), 1);
-            if(now === undefined || matchedMenu1.menu !== now.menu)
-                setTimeout(()=>{document.querySelectorAll(".drop-down:last-child li")[matchedMenu1.menu + 1].click();},1000);
+            if (now === undefined || matchedMenu1.menu !== now.menu)
+                setTimeout(() => {
+                    document.querySelectorAll(".drop-down:last-child li")[matchedMenu1.menu + 1].click();
+                }, 1000);
             now = matchedMenu1;
         }
 
-    },200);
+    }, 200);
 
 }
 
@@ -100,6 +104,10 @@ const siteLoad = (el) => {
 
 const menuClick = (el, percentage) => {
     document.querySelector('iframe').contentWindow.scroll(percentage);
+}
+
+const openSidebar = () => {
+
 }
 
 function active(titleIdx, subtitleIdx) {

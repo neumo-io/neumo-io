@@ -388,7 +388,7 @@
     }
 
     button.fourth .hover .solid {
-        background:#E4EAF0;
+        background: #E4EAF0;
     }
 
     button.fourth .hover .border {
@@ -399,10 +399,12 @@
     button.fourth .hover .content {
         border-radius: 14px;
     }
+
     button.fourth:hover .hover {
         opacity: 1;
     }
-    button.fourth:hover > .border{
+
+    button.fourth:hover > .border {
         opacity: 0;
     }
 }
@@ -504,69 +506,48 @@
     }
 }
 @layer select {
-    .select {
+    .select .container {
         display: flex;
-
+        grid-gap: 48px;
+        flex-direction: row;
     }
 
     .select li {
         list-style: none;
         position: relative;
+        transition: .2s ease;
+        cursor: pointer;
+    }
+
+    .select li span {
+        font-family: Spoqa Han Sans Neo;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 48px;
+        text-align: center;
     }
 
     .select .indicator {
+        margin-top: 8px;
         border-radius: 8px;
-        width: 100%;
+        width: 133px;
         height: 8px;
         position: relative;
-    }
-
-    .select .indicator * {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 8px;
-    }
-
-    .select .indicator .before {
-        background: #EDF1F5;
-        filter: blur(20px);
-        z-index: 0;
-        transition: .2s ease;
-    }
-
-    .select .indicator .normal {
-        background: #DBE5F0;
-        box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.4), 4px 4px 8px #B3BFCC, inset -2px -2px 4px #BECAD6, inset 2px 2px 4px #FFFFFF;
-        filter: blur(4px);
-        opacity: 0;
-        z-index: 1;
-        transition: .2s ease;
-    }
-
-    .select .indicator .after {
         background: linear-gradient(105.46deg, #66CCFF 0%, #0073E5 100%);
         box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.4), 4px 4px 8px #88D5FF, inset -2px -2px 4px #0086DE, inset 2px 2px 4px #36BAFF;
-        opacity: 0;
-        z-index: 2;
-        transition: .1ms ease;
+        border-radius: 8px;
+        transition: .2s cubic-bezier(.35,2,.52,1.5);
     }
-    .delay{
-        transition-delay: .19s;
+    .select .active{
+        color: #199FFF;
     }
-
-    .select .indicator.active .before {
-        opacity: 0;
-        filter: blur(0px);
+    .select .indicator.first{
+        transform: translateX(0);
     }
-
-    .select .indicator.active .normal {
-        opacity: 1;
+    .select .indicator.second{
+        transform: translateX(calc(100% + 48px));
     }
-
-    .select .indicator.active .after {
-        opacity: 1;
+    .select .indicator.third{
+        transform: translateX(calc(200% + 96px));
     }
 }
