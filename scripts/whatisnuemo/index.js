@@ -17,7 +17,6 @@ window.onscroll = (e) => {
             }
         )
     }
-    console.log(percentage);
     if (percentage >= 6) {
         document.querySelector('.description p:nth-child(1)').classList.remove('active');
     }
