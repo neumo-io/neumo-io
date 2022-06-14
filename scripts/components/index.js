@@ -7,7 +7,6 @@ window.onscroll = (e) => {
         document.body.clientHeight, document.documentElement.clientHeight
     ) - sbHeight;
     const percentage = parseInt(this.scrollY) / parseInt(scrollHeight) * 100;
-    console.log(percentage);
     if (percentage >= 0 && percentage < 15) {
         window.parent.active(1, 0);
     } else if (percentage >= 20 && percentage < 40) {
@@ -57,7 +56,7 @@ const selectMenu = (el, className)=>{
     document.querySelector('.indicator').classList.remove('third')
 
     document.querySelector('.indicator').classList.add(className);
-    snd.play(Snd.SOUNDS.TRANSITION_UP);
+    snd.play(Snd.SOUNDS.SELECT);
 }
 /* select end */
 

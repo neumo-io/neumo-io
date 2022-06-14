@@ -10,28 +10,37 @@ window.onscroll = (e) => {
     } else {
         window.parent.active(0, 1);
     }
-    if (percentage < 4) {
+    if (percentage < 6) {
         document.querySelectorAll('.description p').forEach(
             (el) => {
                 el.classList.add('active');
             }
         )
     }
-    if (percentage >= 4) {
+    console.log(percentage);
+    if (percentage >= 6) {
         document.querySelector('.description p:nth-child(1)').classList.remove('active');
     }
-    if (percentage >= 36) {
+    if (percentage >= 28) {
         document.querySelector('.description p:nth-child(2)').classList.remove('active');
-    } else if (this.scrollY >= 4) {
+    }
+    if (percentage >= 43) {
+        document.querySelector('.description p:nth-child(3)').classList.remove('active');
+    }
+    if (percentage >= 6 && percentage < 32) {
         document.querySelector('.description p:nth-child(2)').classList.add('active');
+    }
+    if(percentage < 48){
+        document.querySelector('.description p:nth-child(3)').classList.add('active');
+
     }
     window.percentage = percentage;
     if (percentage >= 60) {
         document.querySelectorAll('.container > div .layout').forEach((el, idx) => {
             setTimeout(() => {
                 if (window.percentage >= 60) {
-                    if(!el.classList.contains('active')){
-                        parent.snd.play(Snd.SOUNDS.TRANSITION_UP);
+                    if (!el.classList.contains('active')) {
+                        // parent.snd.play(Snd.SOUNDS.TAP);
                     }
                     el.classList.add('active')
                 }
@@ -49,8 +58,8 @@ window.onscroll = (e) => {
             if (el.classList.contains('active')) {
                 setTimeout(() => {
                     if (window.percentage < 60) {
-                        if(el.classList.contains('active')){
-                            parent.snd.play(Snd.SOUNDS.TRANSITION_DOWN);
+                        if (el.classList.contains('active')) {
+                            // parent.snd.play(Snd.SOUNDS.TRANSITION_DOWN);
                         }
                         el.classList.remove('active')
                     }
@@ -76,7 +85,8 @@ function scroll(percentage) {
     );
     window.scrollTo(0, percentage / 100 * scrollHeight);
 }
-window.onload = function(){
+
+window.onload = function () {
     window.parent.active(0, 0);
     // window.snd = new Snd();
     // window.snd.load(Snd.KITS.SND01);

@@ -114,7 +114,7 @@ function active(titleIdx, subtitleIdx) {
     const TITLE_EL = document.querySelectorAll('.drop-down')[titleIdx];
     const SUBTITLE_EL = TITLE_EL.querySelectorAll('li');
     if (!SUBTITLE_EL[subtitleIdx + 1].classList.contains('active')) {
-        snd.play(Snd.SOUNDS.BUTTON);
+        // snd.play(Snd.SOUNDS.SWIPE);
     }
     SUBTITLE_EL.forEach((li, idx) => {
         li.classList.remove('active');

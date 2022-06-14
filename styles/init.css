@@ -41,12 +41,13 @@
     background-color: var(--cg40);
   }
 
-  * {
+  *:not(button *, li *, input, .search-box *, .text-box *) {
     font-family: Spoqa Han Sans Neo;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0px;
+    color: var(--cg700);
   }
   .cg-20 {
     background-color: var(--cg20);

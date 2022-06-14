@@ -179,9 +179,7 @@ const loadHistory = () => {
     document.querySelector('#history').innerHTML = "";
     for (let idx in datas) {
         const item = datas[idx];
-        console.log(item);
         const html = htmlToElement(`<div class="color" onclick="load(${idx})" style="background: linear-gradient(105deg, hsla(${item.lightShadow.hue}, ${item.lightShadow.chroma}%, ${item.lightShadow.light}%, ${item.lightShadow.opacity}) 0%, hsla(${item.darkShadow.hue}, ${item.darkShadow.chroma}%, ${item.darkShadow.light}%, ${item.darkShadow.opacity}) 100%)"></div>`);
-        console.log(document.querySelector('#history'));
         document.querySelector('#history').appendChild(html);
     }
 }
