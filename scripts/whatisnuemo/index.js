@@ -26,10 +26,10 @@ window.onscroll = (e) => {
         document.querySelector('.description p:nth-child(2)').classList.add('active');
     }
     window.percentage = percentage;
-    if (percentage >= 70) {
+    if (percentage >= 60) {
         document.querySelectorAll('.container > div .layout').forEach((el, idx) => {
             setTimeout(() => {
-                if (window.percentage >= 70) {
+                if (window.percentage >= 60) {
                     if(!el.classList.contains('active')){
                         parent.snd.play(Snd.SOUNDS.TRANSITION_UP);
                     }
@@ -39,16 +39,16 @@ window.onscroll = (e) => {
         })
         document.querySelectorAll('.container > div p').forEach((el, idx) => {
             setTimeout(() => {
-                if (window.percentage >= 70) {
+                if (window.percentage >= 60) {
                     el.classList.add('active');
                 }
             }, 40 * idx);
         })
-    } else if (percentage < 70) {
+    } else if (percentage < 60) {
         document.querySelectorAll('.container > div .layout').forEach((el, idx, arr) => {
             if (el.classList.contains('active')) {
                 setTimeout(() => {
-                    if (window.percentage < 70) {
+                    if (window.percentage < 60) {
                         if(el.classList.contains('active')){
                             parent.snd.play(Snd.SOUNDS.TRANSITION_DOWN);
                         }
@@ -59,7 +59,7 @@ window.onscroll = (e) => {
         })
         document.querySelectorAll('.container > div p').forEach((el, idx, arr) => {
             setTimeout(() => {
-                if (window.percentage < 70) {
+                if (window.percentage < 60) {
                     el.classList.remove('active')
                 }
             }, 40 * (arr.length - idx));

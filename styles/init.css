@@ -19,6 +19,9 @@
     --background-color: var(--cg40);
     --lobby-background-color: #dbe5f0;
     --depth-1-color: var(--cg20);
+    --pink: #FF3377;
+    --blue: #0080FF;
+
     --direction-x: -4px;
     --direction-y: -4px;
     --direction-x-invert: 4px;
