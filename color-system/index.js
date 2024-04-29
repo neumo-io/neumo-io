@@ -70,9 +70,9 @@ const setShadows = () => {
 }
 const setFontColor = () => {
     if (isLight()) {
-        document.documentElement.style.setProperty('--font-color-system', `black`);
+        document.documentElement.style.setProperty('--font-color', `black`);
     } else {
-        document.documentElement.style.setProperty('--font-color-system', `white`);
+        document.documentElement.style.setProperty('--font-color', `white`);
 
     }
 }

@@ -79,7 +79,7 @@
     }
 
     button span {
-        color: white;
+        color: var(--font-color);
         font-weight: bold;
     }
 }
