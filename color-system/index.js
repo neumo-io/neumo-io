@@ -4,7 +4,7 @@ let keyColor = {
     light: 95,
     opacity: 1,
 }
-// 더이상 쓰지 않는 변수객체들
+// 더이상 쓰지 않는 변수객체들 
 // let lightShadow = {
 //     hue: 251,
 //     chroma: 3,
@@ -71,7 +71,7 @@ const setFontColor = () => {
 }
 const save = () => {
     const DATA = {
-        keyColor, lightShadow, darkShadow, intensity
+        keyColor, intensity
     }
     let DATAS = JSON.parse(window.localStorage.getItem('data'));
     if (DATAS == undefined) {
@@ -86,8 +86,6 @@ const load = (index) => {
     const data = DATAS[index];
 
     keyColor = data.keyColor;
-    lightShadow = data.lightShadow;
-    darkShadow = data.darkShadow;
     intensity = data.intensity;
 
     setKeyColor();
@@ -176,7 +174,9 @@ const loadHistory = () => {
     document.querySelector('#history').innerHTML = "";
     for (let idx in datas) {
         const item = datas[idx];
-        const html = htmlToElement(`<div class="color" onclick="load(${idx})" style="background: linear-gradient(105deg, hsla(${item.lightShadow.hue}, ${item.lightShadow.chroma}%, ${item.lightShadow.light}%, ${item.lightShadow.opacity}) 0%, hsla(${item.darkShadow.hue}, ${item.darkShadow.chroma}%, ${item.darkShadow.light}%, ${item.darkShadow.opacity}) 100%)"></div>`);
+        const html = htmlToElement(
+          `<div class="color" onclick="load(${idx})" style="background: linear-gradient(105deg, lch(calc(${item.keyColor.light} + ${intensity.light}) ${item.keyColor.chroma} ${item.keyColor.hue}), lch(calc(${item.keyColor.light} - ${intensity.dark}) ${item.keyColor.chroma} ${item.keyColor.hue}))"></div>`
+        );
         document.querySelector('#history').appendChild(html);
     }
 }
