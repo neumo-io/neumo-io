@@ -4,18 +4,19 @@ let keyColor = {
     light: 95,
     opacity: 1,
 }
-let lightShadow = {
-    hue: 251,
-    chroma: 3,
-    light: 95,
-    opacity: 1,
-}
-let darkShadow = {
-    hue: 251,
-    chroma: 3,
-    light: 95,
-    opacity: 1,
-}
+// 더이상 쓰지 않는 변수객체들
+// let lightShadow = {
+//     hue: 251,
+//     chroma: 3,
+//     light: 95,
+//     opacity: 1,
+// }
+// let darkShadow = {
+//     hue: 251,
+//     chroma: 3,
+//     light: 95,
+//     opacity: 1,
+// }
 let intensity = {
     light: 10,
     dark: 10
@@ -54,14 +55,6 @@ const setShadows = () => {
     //         darkShadow.light = keyColor.light - 10;
     //     }
     // }
-    lightShadow.hue = keyColor.hue;
-    darkShadow.hue = keyColor.hue;
-
-    lightShadow.chroma = keyColor.chroma;
-    darkShadow.chroma = keyColor.chroma;
-
-    lightShadow.light = keyColor.light + intensity.light;
-    darkShadow.light = keyColor.light - intensity.dark;
 
     // 라이브러리에서 css color system으로 변경
     document.documentElement.style.setProperty('--light-shadow', `lch(from var(--keycolor) calc(l + ${intensity.light}) c h)`);
