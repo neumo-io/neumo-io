@@ -11,7 +11,7 @@
     --cg40: #EDF1F5;
     --cg20: #F7F9FA;
 
-    --keycolor: #1f3347;
+    --keycolor: lch(95% 3 251);
     --light-shadow: #264059;
     --dark-shadow: #0f1924;
     --font-color: white;

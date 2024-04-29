@@ -4,31 +4,35 @@ let keyColor = {
     light: 95,
     opacity: 1,
 }
-let lightShadow = {
-    hue: 251,
-    chroma: 3,
-    light: 95,
-    opacity: 1,
-}
-let darkShadow = {
-    hue: 251,
-    chroma: 3,
-    light: 95,
-    opacity: 1,
-}
+// 더이상 쓰지 않는 변수객체들
+// let lightShadow = {
+//     hue: 251,
+//     chroma: 3,
+//     light: 95,
+//     opacity: 1,
+// }
+// let darkShadow = {
+//     hue: 251,
+//     chroma: 3,
+//     light: 95,
+//     opacity: 1,
+// }
 let intensity = {
     light: 10,
     dark: 10
 }
-const getColor = (PROPS, property) => {
-    const keyColor_TEMP = getComputedStyle(document.documentElement).getPropertyValue(property);
-    const args = new Color.default(keyColor_TEMP).lch;
 
-    PROPS.hue = parseInt(args[2]);
-    PROPS.chroma = parseInt(args[1]);
-    PROPS.light = parseInt(args[0]);
-    PROPS.opacity = parseInt(args[3]);
-};
+// 더이상 쓰지 않는함수
+// const getColor = (PROPS, property) => {
+//     const keyColor_TEMP = getComputedStyle(document.documentElement).getPropertyValue(property);
+//     const args = new Color.default(keyColor_TEMP).lch;
+
+//     PROPS.hue = parseInt(args[2]);
+//     PROPS.chroma = parseInt(args[1]);
+//     PROPS.light = parseInt(args[0]);
+//     PROPS.opacity = parseInt(args[3]);
+// };
+
 const isLight = () => {
     return keyColor.light > 50;
 };
@@ -51,24 +55,17 @@ const setShadows = () => {
     //         darkShadow.light = keyColor.light - 10;
     //     }
     // }
-    lightShadow.hue = keyColor.hue;
-    darkShadow.hue = keyColor.hue;
 
-    lightShadow.chroma = keyColor.chroma;
-    darkShadow.chroma = keyColor.chroma;
-
-    lightShadow.light = keyColor.light + intensity.light;
-    darkShadow.light = keyColor.light - intensity.dark;
-
-    document.documentElement.style.setProperty('--light-shadow', (new Color.default("lch",[lightShadow.light,lightShadow.chroma,lightShadow.hue])).hex);
-    document.documentElement.style.setProperty('--dark-shadow', (new Color.default("lch",[darkShadow.light,darkShadow.chroma,darkShadow.hue])).hex);
+    // 라이브러리에서 css color system으로 변경
+    document.documentElement.style.setProperty('--light-shadow', `lch(from var(--keycolor) calc(l + ${intensity.light}) c h)`);
+    document.documentElement.style.setProperty('--dark-shadow', `lch(from var(--keycolor) calc(l - ${intensity.dark}) c h)`);
 
 }
 const setFontColor = () => {
     if (isLight()) {
-        document.documentElement.style.setProperty('--font-color-system', `black`);
+        document.documentElement.style.setProperty('--font-color', `black`);
     } else {
-        document.documentElement.style.setProperty('--font-color-system', `white`);
+        document.documentElement.style.setProperty('--font-color', `white`);
 
     }
 }
@@ -98,7 +95,7 @@ const load = (index) => {
     setShadows();
 }
 const setKeyColor = () => {
-    document.documentElement.style.setProperty('--keycolor', (new Color.default("lch",[keyColor.light,keyColor.chroma,keyColor.hue])).hex);
+    document.documentElement.style.setProperty('--keycolor', `lch(${keyColor.light}% ${keyColor.chroma} ${keyColor.hue})`);
 }
 const changeHue = (value) => {
     // getColor(keyColor, '--keycolor');
